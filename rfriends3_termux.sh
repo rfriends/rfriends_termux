@@ -25,11 +25,9 @@ SITE=https://github.com/rfriends/rfriends3/releases/latest/download
 SCRIPT=rfriends3_latest_script.zip
 dir=`pwd`
 #===========================================================
-termux-setup-storage
 #
 pkg update -y 
 pkg upgrade -y 
-pkg install -y wget
 
 echo
 echo ツールをインストール
