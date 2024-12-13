@@ -1,2 +1,5 @@
 rfriends_termuxはandroidスマートホン上にrfriends3をインストールするスクリプトです。  
-現在はgithub上での公開をテスト中です。
+
+  インストール方法は以下を参照のこと。  
+余ったandroidスマホとTermuxでラジオ録音サーバを作ろう (12版)  
+https://rfriends.hatenablog.com/entry/2023/07/18/210107  
