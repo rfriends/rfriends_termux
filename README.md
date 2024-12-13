@@ -1,2 +1,2 @@
-rfriends_termuxはandroidスマートホン上にrfriends3をインストールするスクリプトです。
+rfriends_termuxはandroidスマートホン上にrfriends3をインストールするスクリプトです。  
 現在はgithub上での公開をテスト中です。
