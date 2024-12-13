@@ -2,6 +2,7 @@ rfriends_termuxはandroidスマートホン上にrfriends3をインストール�
 現在テスト中のため、正常に動作しません。  
 
 cd ~/  
+termux-setup-storage  
 pkg install git -y  
 git clone https://github.com/rfriends/rfriends_termux.git  
 cd rfriends_termux  
