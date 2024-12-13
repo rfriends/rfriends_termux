@@ -21,7 +21,8 @@ echo
 PREFIX=/data/data/com.termux/files/usr
 HOME=/data/data/com.termux/files/home
 #SITE=http://rfriends.s1009.xrea.com/files3
-SITE=https://rfriends.s1009.xrea.com/files3
+SITE=https://github.com/rfriends/rfriends3/releases/latest/download
+SCRIPT=rfriends3_latest_script.zip
 dir=`pwd`
 #===========================================================
 termux-setup-storage
@@ -66,9 +67,9 @@ if [ -d ./rfriends3 ]; then
 	esac
 fi
 
-rm -f rfriends3_latest_script.zip
-wget $SITE/rfriends3_latest_script.zip
-unzip -q -o rfriends3_latest_script.zip
+rm -f $SCRIPT
+wget $SITE/$SCRIPT
+unzip -q -o $SCRIPT
 
 sed 's/rfriends_name = ""/rfriends_name = "termux"/' $HOME/rfriends3/script/rfriends.ini > $HOME/rfriends3/config/rfriends.ini
 #===========================================================
