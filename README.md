@@ -1,4 +1,5 @@
 rfriends_termuxはandroidスマートホン上にrfriends3をインストールするスクリプトです。  
+現在テスト中のため、正常に動作しません。  
 
 pkg install git -y  
 git clone https://github.com/rfriends/rfriends_termux.git  
