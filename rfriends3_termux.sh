@@ -33,8 +33,6 @@ echo
 echo ツールをインストール
 echo
 
-cd ~/
-
 pkg install -y \
 wget curl unzip p7zip nano vim dnsutils iproute2 openssh \
 ffmpeg atomicparsley php at cronie \
