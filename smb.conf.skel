@@ -1,6 +1,0 @@
-[smbdir]
-path =/data/data/com.termux/files/home/storage/shared
-readonly = no
-browsable = yes
-guest ok = yes
-force user = root
