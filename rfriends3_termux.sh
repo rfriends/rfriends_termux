@@ -20,7 +20,8 @@ echo
 
 PREFIX=/data/data/com.termux/files/usr
 HOME=/data/data/com.termux/files/home
-SITE=http://rfriends.s1009.xrea.com/files3
+#SITE=http://rfriends.s1009.xrea.com/files3
+SITE=https://rfriends.s1009.xrea.com/files3
 dir=`pwd`
 #===========================================================
 termux-setup-storage
