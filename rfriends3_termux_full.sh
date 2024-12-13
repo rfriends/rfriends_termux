@@ -2,17 +2,17 @@
 # -----------------------------------------
 # install rfriends for termux full
 # -----------------------------------------
-# 1.00 2023/08/01 easy
-# 1.01 2023/08/04 add ncpamixer,p7zip
-# 1.10 2024/02/24 full
-# 1.20 2024/04/08 add samba
-# 1.30 2024/10/17 firetv
-# 
+# 1.40 2024/12/13 for github
+ver="1.40"
+# github
+githubuser="rfriends"
+$asset="rfriends3_latest_script.zip"
+#
 # toolinstall
 # rfriends install
 #===========================================================
 echo
-echo rfriends for termux 1.30
+echo rfriends for termux $ver
 echo
 user=`whoami`
 dir=`pwd`
@@ -47,10 +47,10 @@ echo install rfriends
 echo
 
 cd ~/
-
-rm rfriends3_latest_script.zip
-wget http://rfriends.s1009.xrea.com/files3/rfriends3_latest_script.zip
-unzip -q -o rfriends3_latest_script.zip
+rm $asset
+#wget http://rfriends.s1009.xrea.com/files3/rfriends3_latest_script.zip
+wget https://$githubuser/releases/latest/download/$asset
+unzip -q -o $asset
 #===========================================================
 #
 # $PREFIX=/data/data/com.termux/files/usr
