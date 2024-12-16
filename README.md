@@ -4,7 +4,7 @@ cd ~/
 termux-setup-storage  
 sudo apt install git  
 git clone https://github.com/rfriends/rfriends_termux.git  
-cd termux 
+cd termux  
 sh rfriends3_termux.sh  
 
   インストール方法は以下が参考になります。   
