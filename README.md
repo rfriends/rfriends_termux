@@ -2,9 +2,9 @@ rfriends_termuxはandroidスマートホン上にrfriends3をインストール�
 
 cd ~/  
 termux-setup-storage  
-pkg install git -y  
-git clone https://github.com/rfriends/rfriends_termux.git  
-cd rfriends_termux  
+wget -O rfriends_termux-main.zip https://github.com/rfriends/rfriends_termux/archive/master.zip  
+unzip rfriends_termux-main.zip  
+cd rfriends_termux-main  
 sh rfriends3_termux.sh  
 
   インストール方法は以下が参考になります。   
