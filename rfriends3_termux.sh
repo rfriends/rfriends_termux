@@ -214,7 +214,7 @@ sed -i 's/#webdav.is-readonly/webdav.is-readonly/'       $LCONF/conf.d/webdav.co
 sed -i 's/#webdav.sqlite-db-name/webdav.sqlite-db-name/' $LCONF/conf.d/webdav.conf
 sed -i 's/webdav.sqlite-db-name/#webdav.sqlite-db-name/' $LCONF/conf.d/webdav.conf
 sed -i 's/#dir-listing.activate/dir-listing.activate/'   $LCONF/conf.d/dirlisting.conf
-sed -i 's/#dir-listing.external-css/dir-listing.external-css' $LCONF/conf.d/dirlisting.conf
+sed -i 's/#dir-listing.external-css/dir-listing.external-css/' $LCONF/conf.d/dirlisting.conf
 #===========================================================
 echo
 echo 1. exit で termux を終了
