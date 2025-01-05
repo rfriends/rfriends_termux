@@ -129,11 +129,12 @@ termux-wake-lock
 #
 echo
 cd ~/
-port=8000
-ip=`sh rfriends3/getIP.sh`
-server=${ip}:${port}
+#port=8000
+#ip=`sh rfriends3/getIP.sh`
+#server=${ip}:${port}
+ifconfig | grep inet
 echo
-echo ブラウザで、http://$server にアクセスしてください。
+echo ブラウザで、http://IPアドレス:8000 にアクセスしてください。
 echo
 EOF
 #===========================================================
