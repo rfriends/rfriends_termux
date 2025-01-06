@@ -66,16 +66,14 @@ ln -s $HTDOCS/temp $HTDOCS/webdav
 mv -n $LCONF/lighttpd.conf $LCONF/lighttpd.conf.org
 mv -n $LCONF/modules.conf  $LCONF/modules.conf.org
 mv -n $LCONF/conf.d/fastcgi.conf    $LCONF/conf.d/fastcgi.conf.org
+mv -n $LCONF/conf.d/webdav.conf     $LCONF/conf.d/webdav.conf.org
+mv -n $LCONF/conf.d/dirlisting.conf $LCONF/conf.d/dirlisting.conf.org
 
 cp -f $dir/lighttpd.conf $LCONF/lighttpd.conf
 cp -f $dir/modules.conf  $LCONF/modules.conf
 cp -f $dir/fastcgi.conf  $LCONF/conf.d/fastcgi.conf 
-
-sed -i 's/#webdav.is-readonly/webdav.is-readonly/'       $LCONF/conf.d/webdav.conf
-sed -i 's/#webdav.sqlite-db-name/webdav.sqlite-db-name/' $LCONF/conf.d/webdav.conf
-sed -i 's/webdav.sqlite-db-name/#webdav.sqlite-db-name/' $LCONF/conf.d/webdav.conf
-sed -i 's/#dir-listing.activate/dir-listing.activate/'   $LCONF/conf.d/dirlisting.conf
-sed -i 's/#dir-listing.external-css/dir-listing.external-css/' $LCONF/conf.d/dirlisting.conf
+cp -f $dir/webdav.conf     $LCONF/conf.d/webdav.conf
+cp -f $dir/dirlisting.conf $LCONF/conf.d/dirlisting.conf
 #===========================================================
 echo
 echo 1. exit で termux を終了
