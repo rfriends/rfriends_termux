@@ -4,6 +4,7 @@ termux-setup-storage
 sudo apt-get update && sudo apt-get upgrade -y  
 sudo apt-get install git -y  
 cd ~/  
+rm -rf rfriends_termux  
 git clone https://github.com/rfriends/rfriends_termux.git  
 cd rfriends_termux  
 sh rfriends_termux.sh  
