@@ -13,8 +13,8 @@ echo
 echo rfriends for termux $ver
 echo
 
-PREFIX=/data/data/com.termux/files/usr
-HOME=/data/data/com.termux/files/home
+#PREFIX=/data/data/com.termux/files/usr
+#HOME=/data/data/com.termux/files/home
 SITE=https://github.com/rfriends/rfriends3/releases/latest/download
 SCRIPT=rfriends3_latest_script.zip
 dir=$(cd $(dirname $0);pwd)
