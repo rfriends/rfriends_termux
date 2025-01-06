@@ -46,22 +46,10 @@ unzip -q -o $SCRIPT
 
 sed 's/rfriends_name = ""/rfriends_name = "termux"/' $HOME/rfriends3/script/rfriends.ini > $HOME/rfriends3/config/rfriends.ini
 #===========================================================
-# for cron
-#
 mkdir $HOME/.cache
 cp -f $dir/crontab $HOME/rfriends3/script/crontab
-#===========================================================
-# for vim
-#
-cat <<EOF | tee $HOME/.vimrc > /dev/null
-set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
-EOF
-#===========================================================
-# svenable
-#
-cp -f svenable.sh $HOME/svenable.sh
+cp -f $dir/vimrc $HOME/.vimrc
+cp -f $dir/svenable.sh $HOME/svenable.sh
 #===========================================================
 # usrdir.ini
 #
