@@ -49,20 +49,7 @@ sed 's/rfriends_name = ""/rfriends_name = "termux"/' $HOME/rfriends3/script/rfri
 # for cron
 #
 mkdir $HOME/.cache
-rm -f $HOME/rfriends3/script/crontab
-cat <<EOF | tee $HOME/rfriends3/script/crontab > /dev/null
-# rfriends crontab template for termux (2024/11/03)
-#
-#SHELL=/bin/sh
-#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-BASE_DIR=$HOME/rfriends3
-# m h  dom mon dow   command
-#
-25 05 * * * sh $BASE_DIR/script/ex_rfriends.sh
-# second job
-#
-25 17 * * * sh $BASE_DIR/script/ex_rfriends.sh
-EOF
+cp -f $dir/crontab $HOME/rfriends3/script/crontab
 #===========================================================
 # for vim
 #
