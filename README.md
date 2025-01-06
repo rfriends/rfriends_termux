@@ -1,5 +1,6 @@
 rfriends_termuxはandroidスマートホン上にrfriends3をインストールするスクリプトです。  
 
+termux-change-repo  
 termux-setup-storage  
 pkg update && pkg upgrade -y  
 pkg install git -y  
