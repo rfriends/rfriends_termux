@@ -23,25 +23,16 @@ HOME=/data/data/com.termux/files/home
 #SITE=http://rfriends.s1009.xrea.com/files3
 SITE=https://github.com/rfriends/rfriends3/releases/latest/download
 SCRIPT=rfriends3_latest_script.zip
-dir=`pwd`
+dir=$(cd $(dirname $0);pwd)
 #===========================================================
-#
-pkg update -y 
-pkg upgrade -y 
-
 echo
 echo ツールをインストール
 echo
-
+pkg update -y && pkg upgrade -y 
 pkg install -y \
 wget curl unzip p7zip nano vim dnsutils iproute2 openssh \
 ffmpeg atomicparsley php at cronie \
 termux-services termux-auth
-
-#pkg install -y x11-repo
-#pkg install -y ffplay
-#pkg install -y ncpamixer
-
 #pkg install -y chromium-browser
 #===========================================================
 echo
@@ -49,22 +40,6 @@ echo rfriends3 をインストール
 echo
 
 cd $HOME
-
-if [ -d ./rfriends3 ]; then
-	read -p "すでにrfriendsがインストールされていますが、削除しますか？　(y/N) " ans
-
-	case "$ans" in
-  		"y" | "Y" )
-			rm -rf ./rfriends3
-			echo "rfriendsを削除しました。"
-			echo 
-    			;;
-  		* )
-			echo 
-    			;;
-	esac
-fi
-
 rm -f $SCRIPT
 wget $SITE/$SCRIPT
 unzip -q -o $SCRIPT
@@ -80,7 +55,7 @@ cat <<EOF | tee $HOME/rfriends3/script/crontab > /dev/null
 #
 #SHELL=/bin/sh
 #PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-BASE_DIR=/data/data/com.termux/files/home/rfriends3
+BASE_DIR=$HOME/rfriends3
 # m h  dom mon dow   command
 #
 25 05 * * * sh $BASE_DIR/script/ex_rfriends.sh
@@ -99,93 +74,33 @@ EOF
 #===========================================================
 # svenable
 #
-rm -f $HOME/svenable.sh
-cat <<'EOF' | tee $HOME/svenable.sh > /dev/null
-#!/bin/sh
-# -----------------------------------------
-# install rfriends for termux easy
-# -----------------------------------------
-# 1.11 2024/07/31 easy
-# 2.00 2024/11/03 add lighttpd
-#=======================================
-echo
-echo sv-enable 2.00
-echo
-echo 以下の5つのコマンドを実行します。
-echo
-echo sv-enable atd
-echo sv-enable crond 
-echo sv-enable sshd
-echo sv-enable lighttpd
-echo termux-wake-lock
-echo
-#=======================================
-sv-enable atd
-sv-enable crond
-sv-enable sshd
-sv-enable lighttpd
-# 
-termux-wake-lock
-#
-echo
-cd ~/
-#port=8000
-#ip=`sh rfriends3/getIP.sh`
-#server=${ip}:${port}
-ifconfig | grep inet
-echo
-echo ブラウザで、http://IPアドレス:8000 にアクセスしてください。
-echo
-EOF
+cp -f svenable.sh $HOME/svenable.sh
 #===========================================================
 # usrdir.ini
 #
 mkdir $HOME/storage/downloads/usr
-#
 #mkdir $HOME/storage/media-1/usr
 #
 cat <<EOF | tee $HOME/rfriends3/config/usrdir.ini > /dev/null
 ; Termux  : ;省略時（ダウンロードディレクトリ）
-;           usrdir = "/data/data/com.termux/files/home/storage/downloads/usr/"
+;           usrdir = "＄HOME/storage/downloads/usr/"
 ;           ;microSDからは：Android/media/com.termux/
-;           usrdir = "/data/data/com.termux/files/home/storage/media-1/"
+;           usrdir = "＄HOME/storage/media-1/"
 ;           tmpdir   = ''
 ; -------------------------------------
 [usrdir]
 ; Internal media
-usrdir="/data/data/com.termux/files/home/storage/downloads/usr/"
+usrdir="＄HOME/storage/downloads/usr/"
 ;
 ; microSD
-;usrdir = "/data/data/com.termux/files/home/storage/media-1/"
+;usrdir = "＄HOME/storage/media-1/"
 ;
 tmpdir = ""
 EOF
 #===========================================================
-# buildinserver -> lighttpd のため廃止 2024/11/03
-#
-#rm $HOME/xrfriends3
-#cat <<EOF | tee $HOME/xserver.sh > /dev/null
-#!/bin/sh
-# -----------------------------------------
-# rfriends 簡単起動
-# -----------------------------------------
-# 1.01 2023/08/01
-# 1.03 2024/10/23
-#
-#cd ~/rfriends3
-# -----------------------------------------
-#sh rf3server.sh
-# -----------------------------------------
-#EOF
-
-#chmod +x ~/xserver.sh
-#===========================================================
 # lighttpd + fastcgi + webdav
 #===========================================================
-
 LCONF=$PREFIX/etc/lighttpd
-
-#HTDOCS=$PREFIX/var/www/htdocs
 HTDOCS=$HOME/rfriends3/script/html
 
 pkg install -y lighttpd
