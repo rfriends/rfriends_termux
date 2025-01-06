@@ -6,7 +6,7 @@ sudo apt-get install git -y
 cd ~/  
 git clone https://github.com/rfriends/rfriends_termux.git  
 cd rfriends_termux  
-sh rfriends3_termux.sh  
+sh rfriends_termux.sh  
 
   インストール方法は以下が参考になります。   
 余ったandroidスマホとTermuxでラジオ録音サーバを作ろう (13版)  
