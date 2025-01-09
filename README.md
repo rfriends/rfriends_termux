@@ -10,13 +10,6 @@ git clone https://github.com/rfriends/rfriends_termux.git
 cd rfriends_termux  
 sh rfriends_termux.sh  
   
-easy install はこちら  
-上記を自動実行します。  
-リンクを名前をつけて保存し、
-
-
-https://raw.githubusercontent.com/rfriends/rfriends_termux/main/t.sh  
-  
 インストール方法は以下が参考になります。   
-余ったandroidスマホとTermuxでラジオ録音サーバを作ろう (13版)  
+余ったandroidスマホとTermuxでラジオ録音サーバを作ろう (14版)  
 https://rfriends.hatenablog.com/entry/2023/07/18/210107  
