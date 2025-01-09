@@ -12,6 +12,8 @@ sh rfriends_termux.sh
   
 easy install はこちら  
 上記を自動実行します。  
+リンクを名前をつけて保存し、
+
 
 https://raw.githubusercontent.com/rfriends/rfriends_termux/main/t.sh  
   
