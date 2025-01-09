@@ -8,8 +8,7 @@ ver=1.0
 echo
 echo easy install friends for termux Vr. $ver
 echo 
-termux-change-repo
-termux-setup-storage
+#termux-change-repo
 pkg update && pkg upgrade -y
 pkg install git -y
 cd ~/
