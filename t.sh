@@ -19,3 +19,4 @@ cd rfriends_termux
 sh rfriends_termux.sh
 echo
 echo finished
+
