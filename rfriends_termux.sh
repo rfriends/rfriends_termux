@@ -16,7 +16,7 @@ echo
 #PREFIX=/data/data/com.termux/files/usr
 #HOME=/data/data/com.termux/files/home
 #SITE=https://github.com/rfriends/rfriends3/releases/latest/download
-https://raw.githubusercontent.com/rfriends/rfriends3_core/main
+SITE=https://raw.githubusercontent.com/rfriends/rfriends3_core/main
 SCRIPT=rfriends3_latest_script.zip
 dir=$(cd $(dirname $0);pwd)
 #===========================================================
