@@ -76,6 +76,8 @@ cp -f $dir/fastcgi.conf  $LCONF/conf.d/fastcgi.conf
 cp -f $dir/webdav.conf     $LCONF/conf.d/webdav.conf
 cp -f $dir/dirlisting.conf $LCONF/conf.d/dirlisting.conf
 #===========================================================
+cp -f $dir/termux.properties $HOME/.termux/.
+#===========================================================
 echo
 echo 1. exit で termux を終了
 echo 2. 再度 termux を起動
