@@ -11,4 +11,5 @@ cd rfriends_termux
 sh rfriends_termux.sh  
   
 インストール方法は以下を参照してください。   
-[余ったandroidスマホとTermuxでラジオ録音サーバを作ろう](https://github.com/rfriends/rfriends_termux/wiki)
+https://github.com/rfriends/rfriends/blob/gh-pages/distro/termux.md
+  
