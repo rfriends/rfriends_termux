@@ -11,5 +11,5 @@ cd rfriends_termux
 sh rfriends_termux.sh  
   
 インストール方法は以下を参照してください。   
-https://github.com/rfriends/rfriends/blob/gh-pages/distro/termux.html
+https://rfriends.github.io/rfriends/gh-pages/distro/termux.html
   
