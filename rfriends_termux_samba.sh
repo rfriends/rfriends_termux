@@ -77,6 +77,20 @@ cp -f $dir/fastcgi.conf  $LCONF/conf.d/fastcgi.conf
 cp -f $dir/webdav.conf     $LCONF/conf.d/webdav.conf
 cp -f $dir/dirlisting.conf $LCONF/conf.d/dirlisting.conf
 #===========================================================
+pkg install -y samba
+mkdir -p $PREFIX/var/log/samba
+#chown root:adm $PREFIX/var/log/samba
+
+cp -f smb.conf $PREFIX/etc/samba/smb.conf
+#chown root:root $PREFIX/etc/samba/smb.conf
+
+mkdir -p $HOME/smbdir/usr2/
+cat <<EOF > $HOME/rfriends3/config/usrdir.ini
+usrdir = "$HOME/smbdir/usr2/"
+tmpdir = "$HOME/tmp/"
+EOF
+# -----------------------------------------
+#===========================================================
 cp -f $dir/termux.properties $HOME/.termux/.
 #===========================================================
 echo
