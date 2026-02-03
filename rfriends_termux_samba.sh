@@ -11,8 +11,10 @@
 ver=3.10
 #===========================================================
 echo
-echo rfriends for termux $ver
+echo rfriends for termux with samba $ver
 echo
+
+exit 0
 
 #PREFIX=/data/data/com.termux/files/usr
 #HOME=/data/data/com.termux/files/home
@@ -79,10 +81,12 @@ cp -f $dir/dirlisting.conf $LCONF/conf.d/dirlisting.conf
 #===========================================================
 pkg install -y samba
 mkdir -p $PREFIX/var/log/samba
-#chown root:adm $PREFIX/var/log/samba
+chown root:adm $PREFIX/var/log/samba
 
+sed -e s%rfriendshomedir%$HOME%g smb.conf.skel > smb.conf
+sed -i s%rfriendsuser%$USER%g smb.conf
 cp -f smb.conf $PREFIX/etc/samba/smb.conf
-#chown root:root $PREFIX/etc/samba/smb.conf
+chown root:root $PREFIX/etc/samba/smb.conf
 
 mkdir -p $HOME/smbdir/usr2/
 cat <<EOF > $HOME/rfriends3/config/usrdir.ini
