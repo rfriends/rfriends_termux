@@ -85,6 +85,7 @@ pkg install -y samba
 
 # samba directory
 #
+cp $PREFIX/share/doc/samba/smb.conf.example $PREFIX/etc/smb.conf
 cat <<EOF | tee -a $PREFIX/etc/smb.conf > /dev/null
 #
 [smbdir]
