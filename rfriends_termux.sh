@@ -7,7 +7,8 @@
 # 2.00 2024/11/04 lighttpd,webdav
 # 3.00 2024/12/13 for github
 # 3.01 2025/01/07 fix
-ver=3.01
+# 3.10 2026/02/05 samba
+ver=3.10
 #===========================================================
 echo
 echo rfriends for termux $ver
@@ -75,6 +76,30 @@ cp -f $dir/modules.conf  $LCONF/modules.conf
 cp -f $dir/fastcgi.conf  $LCONF/conf.d/fastcgi.conf 
 cp -f $dir/webdav.conf     $LCONF/conf.d/webdav.conf
 cp -f $dir/dirlisting.conf $LCONF/conf.d/dirlisting.conf
+#===========================================================
+echo
+echo samba
+echo
+
+pkg install -y samba
+
+# samba directory
+#
+cat <<EOF | tee -a $PREFIX/etc/smb.conf > /dev/null
+#
+[smbdir]
+comment = termux share folder for rfriends
+path = /data/data/com.termux/files/home/storage/downloads/usr2/
+read only = no
+browsable = yes
+guest ok = yes
+force user = termux
+EOF
+#
+echo
+echo "sambaのためのパスワードを設定してください"
+echo
+smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 cp -f $dir/termux.properties $HOME/.termux/.
 #===========================================================
