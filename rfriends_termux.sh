@@ -7,8 +7,8 @@
 # 2.00 2024/11/04 lighttpd,webdav
 # 3.00 2024/12/13 for github
 # 3.01 2025/01/07 fix
-# 3.10 2026/02/05 samba
-ver=3.10
+# 3.11 2026/02/18 samba
+ver=3.11
 #===========================================================
 echo
 echo rfriends for termux $ver
@@ -46,7 +46,7 @@ mkdir $HOME/.cache
 cp -f $dir/crontab $HOME/rfriends3/script/crontab
 cp -f $dir/vimrc $HOME/.vimrc
 cp -f $dir/svenable.sh $HOME/svenable.sh
-mkdir -p $HOME/storage/downloads/usr
+mkdir -p $HOME/storage/downloads/usr2
 cp -f $dir/usrdir.ini $HOME/rfriends3/config/usrdir.ini
 #===========================================================
 echo
