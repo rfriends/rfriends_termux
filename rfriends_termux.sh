@@ -79,7 +79,7 @@ cp -f $dir/webdav.conf     $LCONF/conf.d/webdav.conf
 cp -f $dir/dirlisting.conf $LCONF/conf.d/dirlisting.conf
 #===========================================================
 pkg install -y x11-repo
-pkg upgrade
+pkg upgrade -y
 pkg install -y pulseaudio
 pkg install -y ffplay
 #===========================================================
