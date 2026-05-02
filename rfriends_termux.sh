@@ -8,7 +8,8 @@
 # 3.00 2024/12/13 for github
 # 3.01 2025/01/07 fix
 # 3.11 2026/02/18 samba
-ver=3.11
+# 3.12 2026/05/03 pulseaudio,ffplay
+ver=3.12
 #===========================================================
 echo
 echo rfriends for termux $ver
@@ -103,6 +104,11 @@ echo
 smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 cp -f $dir/termux.properties $HOME/.termux/.
+#===========================================================
+pkg install -y x11-repo
+pkg upgrade
+pkg install -y pulseaudio
+pkg install -y ffplay
 #===========================================================
 echo
 echo 1. exit で termux を終了
