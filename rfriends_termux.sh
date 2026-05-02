@@ -78,6 +78,11 @@ cp -f $dir/fastcgi.conf  $LCONF/conf.d/fastcgi.conf
 cp -f $dir/webdav.conf     $LCONF/conf.d/webdav.conf
 cp -f $dir/dirlisting.conf $LCONF/conf.d/dirlisting.conf
 #===========================================================
+pkg install -y x11-repo
+pkg upgrade
+pkg install -y pulseaudio
+pkg install -y ffplay
+#===========================================================
 echo
 echo samba
 echo
@@ -104,11 +109,6 @@ echo
 smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 cp -f $dir/termux.properties $HOME/.termux/.
-#===========================================================
-pkg install -y x11-repo
-pkg upgrade
-pkg install -y pulseaudio
-pkg install -y ffplay
 #===========================================================
 echo
 echo 1. exit で termux を終了
