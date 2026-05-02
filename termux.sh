@@ -11,7 +11,7 @@ echo easy install friends for termux Vr. $ver
 echo 
 termux-change-repo
 #termux-setup-storage
-#pkg update
+pkg update && pkg upgrade -y
 pkg install git -y
 cd ~/
 rm -rf rfriends_termux
