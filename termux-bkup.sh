@@ -23,8 +23,7 @@ fi
 
 dir=/sdcard/Download
 target=/data/data/com.termux/files
-dat=20260520
-fil=termux-backup-$cpu-$dat.tar.gz
+fil=termux-backup-$cpu.tar.gz
 
 cd ~/
 echo "tar -zcvf $dir/$fil -C $terget ./usr ./home > /dev/null"
