@@ -8,7 +8,7 @@ ver=1.1
 #
 archi=$(dpkg --print-architecture)
 echo
-echo restore rfriends3 image for termux( $archi ) Ver. $ver
+echo restore rfriends3 image for termux[ $archi ] Ver. $ver
 echo 
 
 if [ "$archi" = 'arm' ]; then
@@ -29,11 +29,11 @@ fil=termux-backup-$cpu.tar.gz
 
 cd ~/
 pkg install -y wget
-echo "wget $site/$fil -O $dir/$fil"
-#wget $site/$fil -O $dir/$fil
+#echo "wget $site/$fil -O $dir/$fil"
+wget $site/$fil -O $dir/$fil
 
-echo "tar -zxvf $dir/$fil -C $terget --recursive-unlink --preserve-permissions > /dev/null"
-#tar -zxvf $dir/$fil -C $terget --recursive-unlink --preserve-permissions > /dev/null
+#echo "tar -zxvf $dir/$fil -C $terget --recursive-unlink --preserve-permissions"
+tar -zxvf $dir/$fil -C $terget --recursive-unlink --preserve-permissions
 
 echo
 echo finished
