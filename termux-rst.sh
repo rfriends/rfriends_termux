@@ -25,8 +25,7 @@ fi
 site=https://ss1.xrea.com/rfbuddy.s296.xrea.com/storage
 terget=/data/data/com.termux/files
 dir=/sdcard/Download
-dat=20260520
-fil=termux-backup-$cpu-$dat.tar.gz
+fil=termux-backup-$cpu.tar.gz
 
 cd ~/
 pkg install -y wget
