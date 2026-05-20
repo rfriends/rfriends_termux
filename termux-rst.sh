@@ -23,7 +23,7 @@ else
 fi
 
 site=https://ss1.xrea.com/rfbuddy.s296.xrea.com/storage
-terget=/data/data/com.termux/files
+target=/data/data/com.termux/files
 dir=/sdcard/Download
 fil=termux-backup-$cpu.tar.gz
 
@@ -32,8 +32,10 @@ pkg install -y wget
 #echo "wget $site/$fil -O $dir/$fil"
 wget $site/$fil -O $dir/$fil
 
-#echo "tar -zxvf $dir/$fil -C $terget --recursive-unlink --preserve-permissions"
-tar -zxvf $dir/$fil -C $terget --recursive-unlink --preserve-permissions
+#echo "tar -zxvf $dir/$fil -C $target --recursive-unlink --preserve-permissions"
+tar -zxvf $dir/$fil -C $target --recursive-unlink --preserve-permissions
+
+rm $dir/$fil
 
 echo
 echo finished
