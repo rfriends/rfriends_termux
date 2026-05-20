@@ -7,7 +7,7 @@ ver=1.0
 #
 archi=$(dpkg --print-architecture)
 echo
-echo backup rfriends3 image for termux( $archi ) Ver. $ver
+echo backup rfriends3 image for termux[ $archi ] Ver. $ver
 echo 
 
 if [ "$archi" = 'arm' ]; then
@@ -26,8 +26,8 @@ target=/data/data/com.termux/files
 fil=termux-backup-$cpu.tar.gz
 
 cd ~/
-echo "tar -zcvf $dir/$fil -C $terget ./usr ./home > /dev/null"
-#tar -zcvf $dir/$fil -C $terget ./usr ./home > /dev/null
+echo "tar -zcvf $dir/$fil -C $target ./usr ./home > /dev/null"
+#tar -zcvf $dir/$fil -C $target ./usr ./home > /dev/null
 
 echo
 echo finished
