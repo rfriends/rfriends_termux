@@ -9,7 +9,8 @@
 # 3.01 2025/01/07 fix
 # 3.11 2026/02/18 samba
 # 3.12 2026/05/03 pulseaudio,ffplay
-ver=3.12
+# 3.13 2026/08/08 pkg auto
+ver=3.13
 #===========================================================
 echo
 echo rfriends for termux $ver
@@ -25,7 +26,8 @@ dir=$(cd $(dirname $0);pwd)
 echo
 echo ツールをインストール
 echo
-pkg update -y && pkg upgrade -y 
+#pkg update -y && pkg upgrade -y 
+apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 pkg install -y \
 wget curl unzip p7zip nano vim dnsutils iproute2 openssh \
 ffmpeg atomicparsley php at cronie \
@@ -102,6 +104,11 @@ browsable = yes
 guest ok = yes
 force user = termux
 EOF
+#
+echo
+echo "termuxのためのパスワードを設定してください"
+echo
+passwd
 #
 echo
 echo "sambaのためのパスワードを設定してください"
