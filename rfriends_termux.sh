@@ -26,8 +26,7 @@ dir=$(cd $(dirname $0);pwd)
 echo
 echo ツールをインストール
 echo
-#pkg update -y && pkg upgrade -y 
-apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+pkg update -y && pkg upgrade -y 
 pkg install -y \
 wget curl unzip p7zip nano vim dnsutils iproute2 openssh \
 ffmpeg atomicparsley php at cronie \
