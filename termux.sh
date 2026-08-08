@@ -4,12 +4,13 @@
 #
 # 1.0 2025/01/09 new
 # 1.2 2025/02/03 fix
-ver=1.2
+# 1.3 2026/08/08 fix
+ver=1.3
 #
 echo
 echo easy install friends for termux Vr. $ver
 echo 
-termux-change-repo
+#termux-change-repo
 #termux-setup-storage
 pkg update && pkg upgrade -y
 pkg install git -y
