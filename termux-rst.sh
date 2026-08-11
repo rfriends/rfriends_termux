@@ -13,7 +13,9 @@ echo
 
 if [ "$archi" = 'arm' ]; then
   echo 'arm architecture'
+  echo 'このタイプのサポートは終了しました。'
   cpu=v7a
+  exit 0
 elif [ "$archi" = 'aarch64' ]; then
   echo 'aarch64 architecture'
   cpu=v8a
