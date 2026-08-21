@@ -106,12 +106,6 @@ EOF
 #
 #passwd
 #smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
-
-echo -e "termux\ntermux" | passwd
-#
-echo 
-echo パスワードの初期設定は、$(whoami) / termux です。
-echo
 #===========================================================
 cp -f $dir/termux.properties $HOME/.termux/.
 #===========================================================
