@@ -104,15 +104,15 @@ guest ok = yes
 force user = termux
 EOF
 #
-echo
-echo "termuxのためのパスワードを設定してください"
-echo
-passwd
+#passwd
+#smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
+
+echo "$(whoami):termux" | chpasswd
+echo -e "termux\ntermux" | smbpasswd -s -a $(whoami)
 #
+echo 
+echo パスワードの初期設定は、$(whoami) / termux です。
 echo
-echo "sambaのためのパスワードを設定してください"
-echo
-smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 cp -f $dir/termux.properties $HOME/.termux/.
 #===========================================================
