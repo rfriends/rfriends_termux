@@ -10,7 +10,7 @@
 # 3.11 2026/02/18 samba
 # 3.12 2026/05/03 pulseaudio,ffplay
 # 3.13 2026/08/08 pkg auto
-ver=3.13
+ver=3.2
 #===========================================================
 echo
 echo rfriends for termux $ver
