@@ -107,7 +107,7 @@ EOF
 #passwd
 #smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 
-echo "$(whoami):termux" | chpasswd
+echo -e "termux\termux" | passwd
 echo -e "termux\ntermux" | smbpasswd -s -a $(whoami)
 #
 echo 
