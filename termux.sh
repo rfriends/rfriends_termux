@@ -12,7 +12,10 @@ echo easy install friends for termux Vr. $ver
 echo 
 #termux-change-repo
 #termux-setup-storage
-pkg update && pkg upgrade -y
+
+pkg update
+DEBIAN_FRONTEND=noninteractive apt upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold"
+
 pkg install git -y
 cd ~/
 rm -rf rfriends_termux
