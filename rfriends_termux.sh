@@ -112,17 +112,19 @@ chmod +x $HOME/.termux/boot/start-services.sh
 
 cp -f $dir/bashrc $HOME/.bashrc
 #===========================================================
+PASS="termux"
+echo -e "${PASS}\n${PASS}" | passwd
+
+echo -e "${PASS}\n${PASS}" | smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
+#===========================================================
 source $PREFIX/etc/profile.d/start-services.sh
 
 sv-enable atd
 sv-enable crond
 sv-enable sshd
 sv-enable lighttpd
-#===========================================================
-PASS="termux"
-echo -e "${PASS}\n${PASS}" | passwd
 
-echo -e "${PASS}\n${PASS}" | smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
+source $HOME/.bashrc
 #===========================================================
 #echo
 #echo 1. exit で termux を終了
@@ -130,5 +132,5 @@ echo -e "${PASS}\n${PASS}" | smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #echo 3. sh svenable.sh を実行
 
 echo
-echo finished
+echo Installation completed
 #===========================================================
