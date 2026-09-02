@@ -10,8 +10,8 @@
 # 3.11 2026/02/18 samba
 # 3.12 2026/05/03 pulseaudio,ffplay
 # 3.13 2026/08/08 pkg auto
-# 3.14 2026/09/03 boot
-ver=3.14
+# 3.20 2026/09/03 boot
+ver=3.20
 #===========================================================
 echo
 echo rfriends for termux $ver
@@ -112,16 +112,23 @@ mkdir -p ~/.termux/boot
 cp -f $dir/termux.properties $HOME/.termux/.
 cp -f $dir/start-services.sh $HOME/.termux/boot/.
 chmod +x $HOME/.termux/boot/start-services.sh
+
+cp -f $dir/bashrc $HOME/.bashrc
 #===========================================================
 sv-enable atd
 sv-enable crond
 sv-enable sshd
 sv-enable lighttpd
 #===========================================================
-echo
-echo 1. exit で termux を終了
-echo 2. 再度 termux を起動
-echo 3. sh svenable.sh を実行
+USER="termux"
+PASS="termux"
+printf "%s\n%s\n" "${PASS}" "${PASS}" | passwd "${USER}"
+#===========================================================
+#echo
+#echo 1. exit で termux を終了
+#echo 2. 再度 termux を起動
+#echo 3. sh svenable.sh を実行
+
 echo
 echo finished
 #===========================================================
