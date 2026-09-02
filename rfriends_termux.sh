@@ -115,6 +115,8 @@ chmod +x $HOME/.termux/boot/start-services.sh
 
 cp -f $dir/bashrc $HOME/.bashrc
 #===========================================================
+source $PREFIX/etc/profile.d/start-services.sh
+
 sv-enable atd
 sv-enable crond
 sv-enable sshd
