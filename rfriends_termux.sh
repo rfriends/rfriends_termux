@@ -110,6 +110,11 @@ EOF
 #===========================================================
 cp -f $dir/termux.properties $HOME/.termux/.
 #===========================================================
+sv-enable atd
+sv-enable crond
+sv-enable sshd
+sv-enable lighttpd
+#===========================================================
 echo
 echo 1. exit で termux を終了
 echo 2. 再度 termux を起動
