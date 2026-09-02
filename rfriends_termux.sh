@@ -122,9 +122,8 @@ sv-enable crond
 sv-enable sshd
 sv-enable lighttpd
 #===========================================================
-USER="termux"
 PASS="termux"
-printf "%s\n%s\n" "${PASS}" "${PASS}" | passwd "${USER}"
+printf "%s\n%s\n" "${PASS}" "${PASS}" | passwd
 #===========================================================
 #echo
 #echo 1. exit で termux を終了
