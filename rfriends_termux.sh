@@ -122,7 +122,7 @@ sv-enable lighttpd
 PASS="termux"
 echo -e "${PASS}\n${PASS}" | passwd
 
-printf "%s\n%s\n" "${PASS}" "${PASS}" | smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
+echo -e "${PASS}\n${PASS}" | smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 #echo
 #echo 1. exit で termux を終了
