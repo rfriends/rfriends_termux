@@ -108,7 +108,10 @@ EOF
 #passwd
 #smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
+mkdir -p ~/.termux/boot
 cp -f $dir/termux.properties $HOME/.termux/.
+cp -f $dir/start-services.sh $HOME/.termux/boot/.
+chmod +x $HOME/.termux/boot/start-services.sh
 #===========================================================
 sv-enable atd
 sv-enable crond
