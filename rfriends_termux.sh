@@ -104,9 +104,6 @@ browsable = yes
 guest ok = yes
 force user = termux
 EOF
-#
-#passwd
-#smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 mkdir -p ~/.termux/boot
 cp -f $dir/termux.properties $HOME/.termux/.
@@ -123,7 +120,9 @@ sv-enable sshd
 sv-enable lighttpd
 #===========================================================
 PASS="termux"
-printf "%s\n%s\n" "${PASS}" "${PASS}" | passwd
+echo -e "${PASS}\n${PASS}" | passwd
+
+printf "%s\n%s\n" "${PASS}" "${PASS}" | smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 #echo
 #echo 1. exit で termux を終了
