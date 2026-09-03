@@ -116,7 +116,7 @@ PASS="termux"
 
 printf "${PASS}\n${PASS}\n" | passwd
 
-printf "${PASS}\n${PASS}\n" | smbpasswd -s -L -c $PREFIX/etc/smb.conf -a termux
+#printf "${PASS}\n${PASS}\n" | smbpasswd -s -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 . $PREFIX/etc/profile.d/start-services.sh
 
@@ -125,6 +125,7 @@ sv-enable crond
 sv-enable sshd
 sv-enable lighttpd
 
+echo
 . $HOME/.bashrc
 #===========================================================
 #echo
