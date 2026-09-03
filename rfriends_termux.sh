@@ -113,9 +113,10 @@ chmod +x $HOME/.termux/boot/start-services.sh
 cp -f $dir/bashrc $HOME/.bashrc
 #===========================================================
 PASS="termux"
-echo -e "${PASS}\n${PASS}" | passwd
 
-echo -e "${PASS}\n${PASS}" | smbpasswd -L -c $PREFIX/etc/smb.conf -a termux
+printf "${PASS}\n${PASS}\n" | passwd
+
+printf "${PASS}\n${PASS}\n" | smbpasswd -s -L -c $PREFIX/etc/smb.conf -a termux
 #===========================================================
 . $PREFIX/etc/profile.d/start-services.sh
 
